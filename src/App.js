@@ -7,7 +7,7 @@ const App = () => {
 	const [prediction, setPrediction] = useState('')
 
 	return (
-		<div>
+		<div className='app'>
 			<Form setPrediction={(pred) => setPrediction(pred)} />
 			{prediction ? <Prediction prediction={prediction} /> : ''}
 		</div>

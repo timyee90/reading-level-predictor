@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Prediction = ({ prediction }) => {
-	return <div>Prediction: {prediction}</div>
+	return <div className='prediction center'>Prediction: {prediction}</div>
 }
 
 export default Prediction
