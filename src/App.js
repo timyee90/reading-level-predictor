@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { hot } from 'react-hot-loader/root'
+import Form from './Components/Form'
+import Prediction from './Components/Prediction'
 
-class App extends React.Component {
-	render() {
-		const { name } = this.props
-		return (
-			<>
-				<h1>Hello {name}</h1>
-			</>
-		)
-	}
+const App = () => {
+	const [prediction, setPrediction] = useState('')
+
+	return (
+		<div>
+			<Form setPrediction={(pred) => setPrediction(pred)} />
+			{prediction ? <Prediction prediction={prediction} /> : ''}
+		</div>
+	)
 }
 
 export default hot(App)
