@@ -11,8 +11,8 @@ const Form = ({ setPrediction }) => {
 					Input Text Here
 					<br />
 					<textarea
-						rows='20'
-						cols='50'
+						rows='200'
+						cols='800'
 						onChange={(event) => setTextInput(event.target.value)}
 						className='input-box'
 					/>
@@ -21,15 +21,19 @@ const Form = ({ setPrediction }) => {
 			<button
 				onClick={(event) => {
 					event.preventDefault()
-					console.log(textInput)
-					let data = { text: textInput }
-					axios
-						.post('http://localhost:5000/predict', data)
-						.then(({ data }) => {
-							console.log(data)
-							setPrediction(data.prediction)
-						})
-						.catch((err) => console.log(err))
+					if (textInput !== '') {
+						let data = { text: textInput }
+						axios
+							.post('http://localhost:5000/predict', data)
+							.then(({ data }) => {
+								console.log(data)
+								setPrediction(data.prediction)
+							})
+							.catch((err) => console.log(err))
+					} else {
+						setPrediction('')
+						alert('Please enter reading passage.')
+					}
 				}}
 			>
 				Predict
