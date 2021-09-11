@@ -1,5 +1,5 @@
 {
-	"name": "sentiment-nlp",
+	"name": "reading-level-predictor",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -11,7 +11,7 @@
 		"start": "webpack serve --hot --mode development"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Tim Yee",
 	"license": "ISC",
 	"dependencies": {
 		"@tensorflow/tfjs": "^3.9.0",
