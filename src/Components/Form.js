@@ -29,7 +29,6 @@ const Form = ({ setPrediction }) => {
 						axios
 							.post('http://localhost:5000/predict', data)
 							.then(({ data }) => {
-								console.log(data)
 								setPrediction(data.prediction)
 							})
 							.catch((err) => console.log(err))
